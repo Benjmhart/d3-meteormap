@@ -22,7 +22,7 @@ const projection =  d3.geoMercator()
 const path = d3.geoPath()
       .projection(projection);
       
-const url = "http://enjalot.github.io/wwsd/data/world/world-110m.geojson";
+const url = "/world-110m.geojson";
     d3.json(url, function(err, geojson) {
         if(err){console.log(err)}
       svg.append("path")
