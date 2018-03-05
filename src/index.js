@@ -27,9 +27,11 @@ const url = "http://enjalot.github.io/wwsd/data/world/world-110m.geojson";
         if(err){console.log(err)}
       svg.append("path")
         .attr("d", path(geojson))
+    
+    drawpoints()
     })
-      
-fetch('https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/master/meteorite-strike-data.json')
+const drawpoints = () => {
+    fetch('https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/master/meteorite-strike-data.json')
     .then(r => r.json())
     .then(j => {
         console.log(j)
@@ -98,4 +100,4 @@ fetch('https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/maste
             })
         datapoints.on('mouseover', d => handleMouseOver(d))
         datapoints.on('mouseout', () => handleMouseOut())
-    })
+    })}
